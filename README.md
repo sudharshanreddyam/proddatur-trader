@@ -43,10 +43,19 @@ These numbers come from what the channel posted, not from fills. Option quotes i
 - `reports/contracts.csv`: one line per contract with entry, best, worst, final and a link to the alert post.
 - `reports/summary.json`: the same numbers for scripts.
 
+## NIFTY straddle and AVI-F channel
+
+The `#indian-option-seller` channel carries a different bot: NIFTY paper straddles, plus AVI-F credit spreads that trade real money. `npm run analyze:nifty` parses it.
+
+- Straddle legs and daily basket P&L come from the bot's EOD summaries, which list every leg.
+- AVI-F posts are tagged `LIVE` (broker fills) or `DRY`, and paper posts are tagged `PAPER`. Live and paper results are reported separately.
+- Posts the bot labels as fake test output are excluded: the "ALERT RENDERING TEST" post and the 4 posts after it.
+- Output: `reports/nifty-summary.md` and `reports/nifty-legs.csv`.
+
 ## Tests
 
 ```bash
-npm test    # runs the analysis on test/fixtures/messages.jsonl
+npm test    # NIFTY parser tests, then the prime-intra analysis on test/fixtures/messages.jsonl
 ```
 
 ## Not included

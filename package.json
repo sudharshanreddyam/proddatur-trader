@@ -6,7 +6,8 @@
   "scripts": {
     "fetch": "node src/fetch.js",
     "analyze": "node src/analyze.js",
-    "test": "node src/analyze.js --file test/fixtures/messages.jsonl --out /tmp/discord-channel-signals-test > /dev/null && echo 'fixture analysis OK'"
+    "analyze:nifty": "node src/nifty-analyze.js",
+    "test": "node --test test/ && node src/analyze.js --file test/fixtures/messages.jsonl --out /tmp/proddatur-test > /dev/null && echo 'fixture analysis OK'"
   },
   "engines": {
     "node": ">=18"
