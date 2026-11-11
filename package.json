@@ -7,7 +7,7 @@
     "fetch": "node src/fetch.js",
     "analyze": "node src/analyze.js",
     "analyze:nifty": "node src/nifty-analyze.js",
-    "test": "node --test test/ && node src/analyze.js --file test/fixtures/messages.jsonl --out /tmp/proddatur-test > /dev/null && echo 'fixture analysis OK'"
+    "test": "node --test test/nifty.test.js && node src/analyze.js --file test/fixtures/messages.jsonl --out /tmp/proddatur-test > /dev/null && echo 'fixture analysis OK'"
   },
   "engines": {
     "node": ">=18"
