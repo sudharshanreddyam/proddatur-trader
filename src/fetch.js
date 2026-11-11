@@ -102,6 +102,7 @@ async function main() {
   }
 
   const rows = [...stored.values()].sort((a, b) => Date.parse(a.timestamp) - Date.parse(b.timestamp));
+  fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, rows.map((r) => JSON.stringify(r)).join('\n') + (rows.length ? '\n' : ''));
 
   const empty = rows.filter((r) => !r.content && !r.embeds.length).length;
