@@ -1,0 +1,15 @@
+{
+  "name": "proddatur-trader",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Download a Discord channel's history and measure how its options signals performed",
+  "scripts": {
+    "fetch": "node src/fetch.js",
+    "analyze": "node src/analyze.js",
+    "test": "node src/analyze.js --file test/fixtures/messages.jsonl --out /tmp/discord-channel-signals-test > /dev/null && echo 'fixture analysis OK'"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
